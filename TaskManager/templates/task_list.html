@@ -1,0 +1,121 @@
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Task Manager </title>
+
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+   <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+
+<head>
+    <style>
+        #users {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        #users td,
+        #users th {
+            border: 1px solid rgb(250, 230, 255);
+            padding: 10px;
+        }
+        
+        #users tr:nth-child(even) {
+            background-color: linear-gradient(rgb(250, 230, 255), rgb(179, 230, 255));
+        }
+        
+        #users tr:hover {
+            background-color: #ddd;
+        }
+        
+        #users th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: rgb(240, 245, 245);
+            color: black;
+
+
+        }
+    </style>
+    <style>
+        /* var a=document.getElementById() function get_link() {} */
+    </style>
+    <style>
+        #grad1 {
+            height: 1000px;
+            background-color: rgb(21, 255, 0);
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(rgb(250, 230, 255), rgb(179, 230, 255));
+            /* Standard syntax (must be last) */
+        }
+    </style>
+</head>
+
+<body id="grad1">
+<div  style="background:white;">
+      
+		<img src="{{ url_for('static',filename='assets/img/task.png')}}" class="img-fluid" alt="" width="250" height="80">
+    </div>
+	
+  	<section>
+	<div></br></br>
+    <button class="btn"><a href="/new_task">New Task</a></button>
+
+	<button class="btn btn-info" ><a href="/task_list">To Do List</a></button>
+	
+	<button class="btn btn-success"><a href="/task_completed">Completed Task</a></button>
+	
+    <button class="btn"><a href="/">Home Page</a></button>
+	</div>
+	</br></br>
+	</section >
+	<div >
+    <table id="users" class="table table-hover">
+	<thead class="thead-dark">
+        <tr>
+            <th scope="col">Task ID</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Description</th>
+            <th scope="col">Created On</th>
+            <th scope="col">Assigned To</th>
+            <th scope="col">Created By</th>
+        </tr>
+		  </thead>
+        {% for i in tasks %}
+        <tr>
+            <!-- <td>{{ i.task_id }}</a> </td> -->
+            <td id="link"><a href={{ '/update/%s'%i.task_id|urlencode}}>{{i.task_id}}</a></td>
+            <td>{{ i.task_subject }}</td>
+            <td>{{ i.task_description }}</td>
+            <td>{{ i.created_at }}</td>
+            <td>{{ i.assigned_to }}</td>
+            <td>{{ i.created_by }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+	</div>
+
+</body>
+
+</html>
+

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Task Manager</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
+</head>
+<style>
+    #grad1 {
+        height: 1000px;
+        background-color: rgb(21, 255, 0);
+        /* For browsers that do not support gradients */
+        background-image: linear-gradient(rgb(250, 230, 255), rgb(179, 230, 255));
+        /* Standard syntax (must be last) */
+    }
+
+    .fa-file {
+        color: rgb(0, 234, 255);
+        font-size: 7em;
+        margin: 1rem;
+    }
+</style>
+
+<body id="grad1">
+<div  style="background:white;">
+      
+		<img src="{{ url_for('static',filename='assets/img/task.png')}}" class="img-fluid" alt="" width="250" height="80">
+    </div>
+<br><br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <a class="nav-link" href="/new_task">
+                    <img src="{{ url_for('static',filename='assets/img/new1.png')}}" class="img-fluid" alt="" width="250" height="80">
+                </a>            
+            </div>
+            <div class="col-sm-4">
+                <a class="nav-link" href="/task_list">
+                   <img src="{{ url_for('static',filename='assets/img/do.jpg')}}" class="img-fluid" alt="" width="250" height="100">
+                </a>
+            </div>
+            <!--<div class="col-sm-4">
+                <a class="nav-link" href="/task_completed">
+                    <img src="https://www.iconshock.com/image/Sigma/Project_management/task_completed/" alt="Completed"
+                        width="150" height="150">
+                </a>
+            </div>-->
+            <div class="col-sm-4">
+                <a class="nav-link" href="/upload_file">
+                    <img src="{{ url_for('static',filename='assets/img/upload2.jpg')}}" class="img-fluid" alt="" width="250" height="100">
+                </a>
+            </div>
+			<!--<div class="col-sm-5">
+                <a class="nav-link" href="/update_task">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Cloud_upload_font_awesome.svg/512px-Cloud_upload_font_awesome.svg.png"
+                        alt="update_task" width="150" height="150">
+                </a>UPDATE TASK
+            </div>-->
+			<br><br>
+            <div class="col-sm-5">
+			<br><br>
+                <a class="nav-link" href="/uploaded_file">
+				
+				<img src="{{ url_for('static',filename='assets/img/file.jpg')}}" class="img-fluid" alt="" width="250" height="80">
+               
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark"> -->
+    <!-- Brand/logo -->
+    <!-- <a class="navbar-brand" href="#"><img src="taskassingment/img/logosam.jpeg" height="30" width="156"></a> -->
+
+    <!-- Links -->
+    <!-- <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/task_list">Task List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/new_task">New Task</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/task_completed">Task Completed</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/upload_file">Upload ppt</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/uploaded_file">Document List </a>
+            </li>
+        </ul>
+    </nav> -->
+
+
+
+    <div class="container-fluid">
+    </div>
+
+</body>
+
+</html>
